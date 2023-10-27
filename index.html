@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
-<body>
+<body onload="newgame()">
     <header>
         <div class="line">
             <img id="logo" src="img/favicon.png" alt="forca">
@@ -19,41 +19,41 @@
         <div id="gameboard">
             <span id="gameside">
                 <img id="forca" src="img/lifes/six.svg" alt="forca">
-                <div id="forcatext">_ _ _ _ _
+                <div id="forcatext">
                 </div>
                 <div id="keyboard"><!-- qwertyuiop-->
                     <div class="keyboardline">
-                        <div class="kbtn" onclick="action(Q)">Q</div>
-                        <div class="kbtn" onclick="action(W)">W</div>
-                        <div class="kbtn" onclick="action(E)">E</div>
-                        <div class="kbtn" onclick="action(R)">R</div>
-                        <div class="kbtn" onclick="action(T)">T</div>
-                        <div class="kbtn" onclick="action(Y)">Y</div>
-                        <div class="kbtn" onclick="action(U)">U</div>
-                        <div class="kbtn" onclick="action(I)">I</div>
-                        <div class="kbtn" onclick="action(O)">O</div>
-                        <div class="kbtn" onclick="action(P)">P</div>
+                        <div class="kbtn" onclick="action('Q')">Q</div>
+                        <div class="kbtn" onclick="action('W')">W</div>
+                        <div class="kbtn" onclick="action('E')">E</div>
+                        <div class="kbtn" onclick="action('R')">R</div>
+                        <div class="kbtn" onclick="action('T')">T</div>
+                        <div class="kbtn" onclick="action('Y')">Y</div>
+                        <div class="kbtn" onclick="action('U')">U</div>
+                        <div class="kbtn" onclick="action('I')">I</div>
+                        <div class="kbtn" onclick="action('O')">O</div>
+                        <div class="kbtn" onclick="action('P')">P</div>
                     </div>
                     <div class="keyboardline"><!--asdfghjklç-->
-                        <div class="kbtn" onclick="action(A)">A</div>
-                        <div class="kbtn" onclick="action(S)">S</div>
-                        <div class="kbtn" onclick="action(D)">D</div>
-                        <div class="kbtn" onclick="action(F)">F</div>
-                        <div class="kbtn" onclick="action(G)">G</div>
-                        <div class="kbtn" onclick="action(H)">H</div>
-                        <div class="kbtn" onclick="action(J)">J</div>
-                        <div class="kbtn" onclick="action(K)">K</div>
-                        <div class="kbtn" onclick="action(L)">L</div>
-                        <div class="kbtn" onclick="action(Ç)">Ç</div>
+                        <div class="kbtn" onclick="action('A')">A</div>
+                        <div class="kbtn" onclick="action('S')">S</div>
+                        <div class="kbtn" onclick="action('D')">D</div>
+                        <div class="kbtn" onclick="action('F')">F</div>
+                        <div class="kbtn" onclick="action('G')">G</div>
+                        <div class="kbtn" onclick="action('H')">H</div>
+                        <div class="kbtn" onclick="action('J')">J</div>
+                        <div class="kbtn" onclick="action('K')">K</div>
+                        <div class="kbtn" onclick="action('L')">L</div>
+                        <div class="kbtn" onclick="action('Ç')">Ç</div>
                     </div>
                     <div class="keyboardline"><!--zxcvbnm-->
-                        <div class="kbtn" onclick="action(Z)">Z</div>
-                        <div class="kbtn" onclick="action(X)">X</div>
-                        <div class="kbtn" onclick="action(C)">C</div>
-                        <div class="kbtn" onclick="action(V)">V</div>
-                        <div class="kbtn" onclick="action(B)">B</div>
-                        <div class="kbtn" onclick="action(N)">N</div>
-                        <div class="kbtn" onclick="action(M)">M</div>
+                        <div class="kbtn" onclick="action('Z')">Z</div>
+                        <div class="kbtn" onclick="action('X')">X</div>
+                        <div class="kbtn" onclick="action('C')">C</div>
+                        <div class="kbtn" onclick="action('V')">V</div>
+                        <div class="kbtn" onclick="action('B')">B</div>
+                        <div class="kbtn" onclick="action('N')">N</div>
+                        <div class="kbtn" onclick="action('M')">M</div>
                     </div>
                 </div>
             </span>
