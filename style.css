@@ -103,7 +103,8 @@ main{/*__________________MAIN____________________*/
     font-size: .4em;
 }
 .kbtn:hover{
-    background-color: #ffffff1c
+    background-color: #ffffff1c;
+    color: #00aa69c9;
 }
 /*-------------GAME / MENU---------------------*/
 #menuside{
