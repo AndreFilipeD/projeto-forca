@@ -58,7 +58,7 @@ text-decoration: underline;}
     filter: invert();
 }
 main{/*__________________MAIN____________________*/
-    height: 80vh;
+    height: fit-content;
 }
 /*div, span{delimitador de teste
     border: 1px solid white;}*/
@@ -101,9 +101,11 @@ main{/*__________________MAIN____________________*/
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.26);
     font-size: .4em;
+    transition: 2s;
 }
 .kbtn:hover{
     background-color: #ffffff1c;
+    transition-duration: 0.1s;
     /*color: #00aa69c9;*/
 }
 /*-------------GAME / MENU---------------------*/
