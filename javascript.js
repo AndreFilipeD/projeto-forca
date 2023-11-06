@@ -12,7 +12,7 @@ var score = 0
 var keySelect
 
 function newgame(){
-    cleanGraphics()
+    
     winChars = []// Resetando variaveis
     winTurn = false
     damageLock = false
@@ -25,7 +25,7 @@ function newgame(){
     splitChars = selectedWord.split("")//Cortando caracteres da palavra escolhida
     for(c of selectedWord){winChars.push('_');forcatxt.innerHTML += '_ ';}/* Desenhando tabuleiro */
     forcaUpdate()//Atualizando imagem da forca
-    
+    cleanGraphics()
 }
 
 function action(str){//Ação do jogador
@@ -34,6 +34,7 @@ function action(str){//Ação do jogador
     forcatxt.innerHTML = ''
     score = 0 //resetando avaliadores
     if(missKey.indexOf(str)!=-1){//se a letra já foi selecionada
+        //window.alert('Já foi selecionado')
         winTurn=true
         for(c in splitChars){forcatxt.innerHTML += winChars[c]+' ';if(winChars[c]!='_'){score++}}
     }else{//se a letra ainda não foi selecionada
@@ -43,16 +44,13 @@ function action(str){//Ação do jogador
             if(winChars[c]==='_'&&str===splitChars[c]){//se winChar = _ e letra select = letra da palavra
                 winChars[c]=str//substitua letra da posição por letra selecionada
                 winTurn=true//se já nao estiver ganhando, esteja agora!
-            }forcatxt.innerHTML += winChars[c]+' ';if(winChars[c]!='_'){score++}
+            }
+            forcatxt.innerHTML += winChars[c]+' ';if(winChars[c]!='_'){score++}
         }
-    }/*
-    keySelect = window.document.querySelector(".ke"+c)
-    keySelect.style='background-color:#5a2c2cd8;'
-    */
-    addGraphics()
-
-    if(winTurn===false){life--}//Caso erre a letra, perca vida
-    forcaUpdate()//Atualizando imagem da forca
+    }
+    
+    //window.alert('Score:'+score+'| Need:'+selectedWord.length+'| Palavra:'+ selectedWord+'Life:'+life)
+    if(winTurn===false){life--;forcaUpdate();}//Caso erre a letra, perca vida
     if(life<1){//se a vida zerar, perde
         window.alert('Você perdeu, a palavra era: '+selectedWord+', seu bobo, Iniciando novo jogo!')
         newgame()
@@ -64,16 +62,27 @@ function action(str){//Ação do jogador
     /*diferença entre in e of,
     in retorna numero "indice" para a variavel;
     of retorna elemento para a variavel*/
+    addGraphics()
 }
 function forcaUpdate(){//Atualizando imagem forca
     forcaelement.setAttribute('src','img/lifes/liv'+life+'.svg')
 }
 
+function addGraphics(){
+    for(c of missKey){
+        keySelect = window.document.querySelector(".ke"+c)
+        if(selectedWord.indexOf(c)>-1){
+            keySelect.style='background-color:#00aa69c9;'
+        }else{
+            keySelect.style='background-color:#5a2c2cd8;'
+        }
+    }
+}
 function cleanGraphics(){//vc é um genio, vc é um genio, parabéns
     for(c of missKey){
-        window.alert(".ke"+c)
+        //window.alert(".ke"+c)
         keySelect = window.document.querySelector(".ke"+c)
         keySelect.style=""
     }
-    missKey = []
+    missKey=[]
 }

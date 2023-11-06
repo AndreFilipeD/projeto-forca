@@ -104,7 +104,7 @@ main{/*__________________MAIN____________________*/
 }
 .kbtn:hover{
     background-color: #ffffff1c;
-    color: #00aa69c9;
+    /*color: #00aa69c9;*/
 }
 /*-------------GAME / MENU---------------------*/
 #menuside{
