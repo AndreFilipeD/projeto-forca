@@ -163,15 +163,22 @@ main{/*__________________MAIN____________________*/
     display: none;
 }
 #menulist ul li{
-    padding: 20px;
-    font-size: 0.4em;
+    font-size: 0.2em;
     list-style-type: none;
+    padding: 10px;
+}
+li > img{
+    filter: invert();
+    width: 15px;
+    height: 25px;
+    padding-top: 10px;
 }
 li:hover{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.219);
     color: var(--secolor);
     transition: .2s;
     cursor: pointer;
+    filter: none;
 }
 #configbutton{
     position: absolute;
