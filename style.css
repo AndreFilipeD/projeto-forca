@@ -86,7 +86,7 @@ main{/*__________________MAIN____________________*/
 #keyboard{
     text-align: center;
     padding-top: 20px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 .keyboardline{
     display: flex;
@@ -167,6 +167,9 @@ main{/*__________________MAIN____________________*/
     list-style-type: none;
     padding: 10px;
 }
+.linelist{
+    border-bottom: 1px solid white;
+}
 li > img{
     filter: invert();
     width: 15px;
@@ -175,7 +178,6 @@ li > img{
 }
 li:hover{
     background-color: rgba(255, 255, 255, 0.219);
-    color: var(--secolor);
     transition: .2s;
     cursor: pointer;
     filter: none;
