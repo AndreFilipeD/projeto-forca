@@ -7,18 +7,29 @@
     main{
         height: 80vh;
     }
+    .line > h1{
+        font-size: 1.2em;}
+    #logo{
+        margin-top: 14px;
+        width: 40px;
+        height: 40px;
+        filter: invert();
+    }
     #forca{
         margin: 10vh auto 10vh auto;
         width: 250px;
         height: 250px;
     }
+    #forcatext{
+        font-size: .8em;
+    }
     .kbtn{
-        width: 40px;
-        height: 40px;
+        width: 55px;
+        height: 55px;
         margin: 2px;
         border-radius: 15px;
         border: 1px solid rgba(255, 255, 255, 0.26);
-        font-size: .3em;
+        font-size: .4em;
         transition: 2s;
     }
 }

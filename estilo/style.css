@@ -50,12 +50,14 @@ header{
     align-items: center;
     height: 10%;}
 .line > h1{
-font-size: .95em;}
+font-size: .95em;
+transition: .4s;}
 #logo{
     margin-top: 12px;
     width: 32px;
     height: 32px;
     filter: invert();
+    transition: .4s;
 }
 main{/*__________________MAIN____________________*/
     height: 70vh;
@@ -85,6 +87,7 @@ main{/*__________________MAIN____________________*/
 #forcatext{
     text-align: center;
     font-size: .7em;
+    transition: .4s;
 }
 #keyboard{
     text-align: center;
