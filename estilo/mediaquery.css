@@ -68,19 +68,67 @@
         transition: 2s;
     }
     #configbutton{
-        height: 100vh;
+        height: 30vh;
         background-color: transparent;
         box-shadow: none;
     }
     #configbutton > img{
-        width: 70%;
-        height: 70%;
+        left: -20px;
+        width: 140%;
+        height: 140%;
         filter: invert();
     }
 }
 
 @media screen and (min-width: 1200px){
-    html{
-        background-color: rgb(0, 0, 95);
+    main{
+        height: 80vh;
+    }
+    .line > h1{
+        font-size: 2em;}
+    #logo{
+        margin-top: 25px;
+        width: 60px;
+        height: 60px;
+        filter: invert();
+        border: 7px solid black;
+        border-radius: 10px;
+    }
+    #forca{
+        margin: 10vh auto 0vh auto;
+        width: 300px;
+        height: 300px;
+    }
+    #forcatext{
+        font-size: .8em;
+    }
+    .kbtn{
+        width: 70px;
+        height: 70px;
+        margin: 2px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        font-size: .5em;
+        transition: 2s;
+    }
+    .kbtn:hover{
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.308);
+    }
+    #menuside{
+        width: 200px;
+        background-color: transparent;
+        box-shadow: none;
+        left: calc(100% - 200px);
+        display: block;
+    }
+    #menuside:hover #menulist{
+        width: 200px;
+        display: block;
+    }
+    #menulist{
+        display: block;
+    }
+    #configbutton{
+        display: none;
     }
 }
