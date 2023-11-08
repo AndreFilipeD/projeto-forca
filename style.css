@@ -199,6 +199,13 @@ li:hover{
     border: none;
     filter: invert();
 }
+input{
+    height: 30px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: var(--basecolor);
+    font-size: .8em;
+}
 footer{/*__________________FOOTER____________________*/
     height: 30vh;
     margin-top: auto;
