@@ -34,8 +34,11 @@ h2, a{/*PADRONIZA FONTES*/
     font-size: 0.7em;
     padding-left: 15px;}
 body{/*IMPEDIR CONTEUDO DE VAZAR DO BODY E GERAR BARRAS*/
-    overflow: hidden;}
-.nse{/*IMPEDIR CONTEUDO SEJA SELECIONADO*/
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.nse{/*IMPEDIR CONTEUDO SEJA SELECIONADO*/ 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
