@@ -44,7 +44,7 @@ function newgame(){//Iniciar novo jogo
     // Escolhendo palavra aleatóriamente
     switch(categ){
         case 0://caso todas [ALL] esteja selecionado
-            randnum=Math.floor(Math.random() * 3)+1
+            randnum=Math.floor(Math.random() * 3) + 1 
             if(randnum===1){selectedWord = categAnimal[Math.floor(Math.random() * categAnimal.length)].toUpperCase();}
             else if(randnum===2){selectedWord = categComida[Math.floor(Math.random() * categComida.length)].toUpperCase();}
             else if(randnum==3){selectedWord = categObjetos[Math.floor(Math.random() * categObjetos.length)].toUpperCase();}
