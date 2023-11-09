@@ -15,6 +15,7 @@ var score = 0//pontuação por acerto - detecção de vitória
 var randnum = 0//aleatoriedade
 var keySelect //armazena tecla selecionada
 var categ = 0 //categoria selecionada da lista lateral
+var pause = false
 // MEMÓRIA ------------------------------------------------------------------
 var validChar = ['A','B','C','Ç','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 //caracteres aceitos como entrada de usuário
@@ -64,6 +65,7 @@ function newgame(){//Iniciar novo jogo
     for(c of selectedWord){winChars.push('_');forcatxt.innerHTML += '_ ';}/* Desenhando caracteres vazios*/
     forcaUpdate()//Atualizando imagem da forca
     cleanGraphics()
+    pause=false
 }
 function customgame(){//Jogo personalizado
     noticont.style='display:none;'
@@ -87,6 +89,7 @@ function customgame(){//Jogo personalizado
         for(c of selectedWord){winChars.push('_');forcatxt.innerHTML += '_ ';}/* Desenhando caracteres vazios*/
         forcaUpdate()//Atualizando imagem da forca
         cleanGraphics()
+        pause=false
     }
     window.document.querySelector('#customtxt').value=''
 }
@@ -95,30 +98,34 @@ function action(str){//Ação do jogador
     alreadyMiss = false
     forcatxt.innerHTML = ''
     score = 0 //resetando avaliadores
-    if(missKey.indexOf(str)!=-1){//se a letra já foi selecionada
-        //window.alert('Já foi selecionado')
-        winTurn=true
-        for(c in splitChars){forcatxt.innerHTML += winChars[c]+' ';if(winChars[c]!='_'){score++}}
-    }else{//se a letra ainda não foi selecionada
-        missKey.push(str)//torne a letra já selecionada
-        
-        for(c in splitChars){//para cada posição em splitChar:
-            if(winChars[c]==='_'&&str===splitChars[c]){//se winChar = _ e letra select = letra da palavra
-                winChars[c]=str//substitua letra da posição por letra selecionada
-                winTurn=true//se já nao estiver ganhando, esteja agora!
+    if(pause===false){
+        if(missKey.indexOf(str)!=-1){//se a letra já foi selecionada
+            //window.alert('Já foi selecionado')
+            winTurn=true
+            for(c in splitChars){forcatxt.innerHTML += winChars[c]+' ';if(winChars[c]!='_'){score++}}
+        }else{//se a letra ainda não foi selecionada
+            missKey.push(str)//torne a letra já selecionada
+            
+            for(c in splitChars){//para cada posição em splitChar:
+                if(winChars[c]==='_'&&str===splitChars[c]){//se winChar = _ e letra select = letra da palavra
+                    winChars[c]=str//substitua letra da posição por letra selecionada
+                    winTurn=true//se já nao estiver ganhando, esteja agora!
+                }
+                forcatxt.innerHTML += winChars[c]+' ';if(winChars[c]!='_'){score++}
             }
-            forcatxt.innerHTML += winChars[c]+' ';if(winChars[c]!='_'){score++}
         }
-    }
-    
-    if(winTurn===false){life++;forcaUpdate();}//Caso erre a letra, perca vida
-    if(life>=maxlife){//se a vida zerar, perde
-        noticont.style='display:flex;'
-        notitext.innerHTML='Perdeu kkkk seu bobo, a palavra era '+selectedWord+'...'
-    }
-    if(score >= selectedWord.length){//se a pontuação for maior igual a tamanho da palavra, ganha
-        noticont.style='display:flex;'
-        notitext.innerHTML='Você ganhou, a palavra era '+selectedWord+', seu bom!'
+        
+        if(winTurn===false){life++;forcaUpdate();}//Caso erre a letra, perca vida
+        if(life>=maxlife){//se a vida zerar, perde
+            noticont.style='display:flex;'
+            notitext.innerHTML='Perdeu kkkk seu bobo, a palavra era '+selectedWord+'...'
+            pause=true
+        }
+        if(score >= selectedWord.length){//se a pontuação for maior igual a tamanho da palavra, ganha
+            noticont.style='display:flex;'
+            notitext.innerHTML='Você ganhou, a palavra era '+selectedWord+', seu bom!'
+            pause=true
+        }
     }
     /*diferença entre in e of,
     in retorna numero "indice" para a variavel;
